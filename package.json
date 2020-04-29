@@ -24,7 +24,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+
+    "predeploy:production": "REACT_APP_STAGE=production yarn run build",
+    "deploy:production": "aws s3 sync build/ s3://github.jponc.io --profile jponcProfile",
+    "postdeploy:production": "aws cloudfront create-invalidation --distribution-id E3EG6KVJVME0OS --paths '/*' --profile jponcProfile"
   },
   "eslintConfig": {
     "extends": "react-app"
