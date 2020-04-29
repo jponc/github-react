@@ -30,4 +30,8 @@
 
 ### Future Plans
 1. Implement infinite scrolling/pagination, can easily be done by adding page as part of query params
+2. Fix potential race conditions if I implemented search-as-you type.
+  - One potential way to fix this is to add a check if it's the last promise, then use the value of that
+  - Another way is to use RxJS but I haven't explored this library yet. But I've seen really good reviews about it
+    especially the observables pattern.
 
