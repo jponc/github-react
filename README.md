@@ -15,3 +15,5 @@
 13. Display different badges
 14. Extracted useQuery to a hook and move querying logic to ListScreen
 15. Added progress bar
+16. Added basic tests to components
+17. Added error handling when the user exceeded the rate limit

@@ -16,9 +16,14 @@ export const ListScreen = () => {
     (async () => {
       setIsLoading(true);
       console.log(`Fetching: ${query}`);
-      const repos = await fetchRepositories(query);
-      setRepositories(repos);
-      setIsLoading(false);
+      try {
+        const repos = await fetchRepositories(query);
+        setRepositories(repos);
+      } catch (e) {
+        alert(`Error: ${e.message}`)
+      } finally {
+        setIsLoading(false);
+      }
     })();
   }, [setRepositories, query]);
 
