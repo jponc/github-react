@@ -24,3 +24,4 @@ https://github.jponc.io
 17. Added error handling when the user exceeded the rate limit
 18. Added cloufront distribution
 19. Setup Github actions
+20. Finished ~ 3.5 hrs?
