@@ -10,4 +10,6 @@ export type Repository = {
   owner: Owner
   html_url: string
   description: string
+  stargazers_count: string
+  watchers_count: string
 }
