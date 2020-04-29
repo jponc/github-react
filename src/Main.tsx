@@ -1,3 +1,4 @@
-import React from "react"
+import React from "react";
+import { AppRouter } from "./AppRouter";
 
-export const Main = () => <div>Hi</div>
+export const Main = () => <AppRouter />;
