@@ -11,3 +11,5 @@
 9. Added ability to fetch repositories via Github Search API
 10. Added repositories as part of the global app context
 11. Added fetch repositories initially as part of the layout (TODO: Change this to only fetch in list screen)
+12. Added styling for repository card
+13. Display different badges

@@ -41,7 +41,7 @@ export const AppLayout: React.FC = ({ children }) => {
         <SearchAppBar onSearch={onSearchHandler} defaultValue={searchValue} />
       </div>
       <div className="c-app-layout__content">
-      <Container>{children}</Container></div>
+      <Container maxWidth="md">{children}</Container></div>
     </div>
   );
 };
