@@ -22,42 +22,46 @@ export const RepositoryCard: React.FC<RepositoryCardProps> = ({
   repository,
 }) => {
   return (
-    <Paper elevation={3}>
-      <div className="c-repository-card">
+    <Paper elevation={3} className="c-repository-card">
+      <div>
         <div className="c-repository-card__heading">
-          <div className="c-repository-card__title">
-            <Typography variant="h4" gutterBottom>
-              {repository.full_name}
-            </Typography>
-          </div>
-          <div className="c-repository-card__description">
-            <Typography variant="subtitle1" gutterBottom>
-              {repository.description}
-            </Typography>
-          </div>
+          <Avatar
+            className="c-repository-card__avatar"
+            alt="Avatar"
+            src={repository.owner.avatar_url}
+          />
+          <Typography variant="h4" gutterBottom>
+            {repository.full_name}
+          </Typography>
         </div>
-        <div className="c-repository-card__badges">
-          <List className="c-repository-card__list">
-            <ListItem>
-              <ListItemAvatar>
-                <GitHubIcon />
-              </ListItemAvatar>
-              <ListItemText primary={repository.id} />
-            </ListItem>
-            <ListItem>
-              <ListItemAvatar>
-                <StarIcon />
-              </ListItemAvatar>
-              <ListItemText primary={repository.stargazers_count} />
-            </ListItem>
-            <ListItem>
-              <ListItemAvatar>
-                <VisibilityIcon />
-              </ListItemAvatar>
-              <ListItemText primary={repository.watchers_count} />
-            </ListItem>
-          </List>
+
+        <div className="c-repository-card__description">
+          <Typography variant="subtitle1" gutterBottom>
+            {repository.description}
+          </Typography>
         </div>
+      </div>
+      <div className="c-repository-card__badges">
+        <List className="c-repository-card__list">
+          <ListItem>
+            <ListItemAvatar>
+              <GitHubIcon />
+            </ListItemAvatar>
+            <ListItemText primary={repository.id} />
+          </ListItem>
+          <ListItem>
+            <ListItemAvatar>
+              <StarIcon />
+            </ListItemAvatar>
+            <ListItemText primary={repository.stargazers_count} />
+          </ListItem>
+          <ListItem>
+            <ListItemAvatar>
+              <VisibilityIcon />
+            </ListItemAvatar>
+            <ListItemText primary={repository.watchers_count} />
+          </ListItem>
+        </List>
       </div>
     </Paper>
   );

@@ -3,6 +3,17 @@
   margin-bottom: 15px;
 }
 
+.c-repository-card__title {
+  display: flex
+}
+.c-repository-card__avatar {
+  margin-right: 20px;
+}
+
+.c-repository-card__heading {
+  display: flex;
+}
+
 .c-repository-card__list {
   display: flex;
 }

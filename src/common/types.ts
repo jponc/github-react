@@ -1,6 +1,7 @@
 export type Owner = {
   id: string
   avatar_url: string
+  login: string
 }
 
 export type Repository = {
