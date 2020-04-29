@@ -1,8 +1,10 @@
 # Github Search
 
 ### Links
-Demo: https://github.jponc.io
-CI/CD Pipeline: https://github.com/jponc/github-react/actions
+
+[Demo](https://github.jponc.io)
+
+[CI/CD Pipeline](https://github.com/jponc/github-react/actions)
 
 ### Thought Process
 
