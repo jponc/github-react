@@ -89,7 +89,7 @@ export const SearchAppBar: React.FC<SearchAppBarProps> = ({ defaultValue, onSear
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Search…"
+              placeholder="Search..."
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
