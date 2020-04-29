@@ -1,3 +1,8 @@
 import React from "react";
+import { AppLayout } from "../../components/AppLayout"
 
-export const ListScreen = () => <div>List screen</div>
+export const ListScreen = () => (
+  <AppLayout>
+    <div>List screen</div>
+  </AppLayout>
+)
