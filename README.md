@@ -25,3 +25,7 @@ CI/CD Pipeline: https://github.com/jponc/github-react/actions
 17. Added error handling when the user exceeded the rate limit
 18. Added cloufront distribution
 19. Setup Github actions
+
+### Future Plans
+1. Implement infinite scrolling/pagination, can easily be done by adding page as part of query params
+
