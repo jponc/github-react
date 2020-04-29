@@ -16,7 +16,7 @@ CI/CD Pipeline: https://github.com/jponc/github-react/actions
 8. Added Repository and Owner to types
 9. Added ability to fetch repositories via Github Search API
 10. Added repositories as part of the global app context
-11. Added fetch repositories initially as part of the layout (TODO: Change this to only fetch in list screen)
+11. Added fetch repositories initially as part of the layout
 12. Added styling for repository card
 13. Display different badges
 14. Extracted useQuery to a hook and move querying logic to ListScreen
@@ -25,4 +25,3 @@ CI/CD Pipeline: https://github.com/jponc/github-react/actions
 17. Added error handling when the user exceeded the rate limit
 18. Added cloufront distribution
 19. Setup Github actions
-20. Finished ~ 3.5 hrs?
