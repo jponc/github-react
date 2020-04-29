@@ -1,5 +1,10 @@
 # Github Search
 
+### Live Demo
+https://github.jponc.io
+
+### Thought Process
+
 1. Bootstrapped project with CRA with TypeScript
 2. Removed unnecessary files and used my personal file structure
 3. Added material-ui so it'll look nice somehow
@@ -17,3 +22,4 @@
 15. Added progress bar
 16. Added basic tests to components
 17. Added error handling when the user exceeded the rate limit
+18. Added cloufront distribution
