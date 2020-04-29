@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -63,11 +63,19 @@ const useStyles = makeStyles((theme) => ({
 
 type SearchAppBarProps = {
   defaultValue: string
-  onChange: (newQuery: string) => void
+  onSearch: (newQuery: string) => void
 }
 
-export const SearchAppBar: React.FC<SearchAppBarProps> = ({ defaultValue, onChange }) => {
+export const SearchAppBar: React.FC<SearchAppBarProps> = ({ defaultValue, onSearch }) => {
   const classes = useStyles();
+  const [value, setValue] = useState<string>(defaultValue)
+
+  const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => setValue(event.target.value)
+  const onKeyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.keyCode === 13) {
+      onSearch(value)
+    }
+  }
 
   return (
     <div className={classes.root}>
@@ -86,9 +94,10 @@ export const SearchAppBar: React.FC<SearchAppBarProps> = ({ defaultValue, onChan
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
+              value={value}
+              onChange={onChangeHandler}
               inputProps={{ 'aria-label': 'search' }}
-              defaultValue={defaultValue}
-              onChange={(e) => onChange(e.target.value)}
+              onKeyDown={onKeyDownHandler}
             />
           </div>
         </Toolbar>
