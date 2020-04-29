@@ -1,14 +1,41 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { SearchAppBar } from "../SearchAppBar";
+import {useHistory, useLocation} from "react-router";
+import { fetchRepositories } from "../../actions/github";
+import {useRepository} from "../../context/RepositoryContext";
 
 export const AppLayout: React.FC = ({ children }) => {
+  const history = useHistory()
+  const location = useLocation()
+
+  const getUrlQuery = (): string => {
+    const params = new URLSearchParams(location.search);
+    return params.get("q") || "";
+  }
+
+  const [searchValue, setSearchValue] = useState<string>(getUrlQuery())
+  const { repositories, setRepositories } = useRepository();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    setSearchValue(params.get("q") || "")
+  }, [location.search])
+
+  useEffect(() => {
+    (async () => {
+      const repos = await fetchRepositories(searchValue)
+      setRepositories(repos)
+      console.log(`Fetching: ${searchValue}`);
+    })();
+  }, [setRepositories, searchValue]);
+
   const onSearchHandler = (newQuery: string) => {
-    console.log(newQuery);
+    history.push(`${location.pathname}?q=${newQuery}`);
   };
 
   return (
     <div>
-      <SearchAppBar onSearch={onSearchHandler} defaultValue={""} />
+      <SearchAppBar onSearch={onSearchHandler} defaultValue={searchValue} />
       {children}
     </div>
   );

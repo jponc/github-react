@@ -3,25 +3,20 @@ import { Repository } from "../common/types";
 
 type RepositoryContextType = {
   repositories: Repository[];
-  addRepositories: (additionalRepos: Repository[]) => void;
+  setRepositories: (additionalRepos: Repository[]) => void;
 };
 
 const RepositoryContext = createContext<RepositoryContextType>({
   repositories: [],
-  addRepositories: () => {},
+  setRepositories: () => {},
 });
 
 const RepositoryProvider: React.FC = (props) => {
   const [repositories, setRepositories] = useState<Repository[]>([]);
 
-  const addRepositories = (additionalRepos: Repository[]) => {
-    const newRepositories = { ...repositories, additionalRepos };
-    setRepositories(newRepositories)
-  };
-
   const contextValue = {
     repositories,
-    addRepositories
+    setRepositories
   };
 
   return (
