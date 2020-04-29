@@ -23,3 +23,4 @@ https://github.jponc.io
 16. Added basic tests to components
 17. Added error handling when the user exceeded the rate limit
 18. Added cloufront distribution
+19. Setup Github actions
