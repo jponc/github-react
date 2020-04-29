@@ -9,8 +9,7 @@ export type Repository = {
   name: string
   full_name: string
   owner: Owner
-  html_url: string
   description: string
-  stargazers_count: string
-  watchers_count: string
+  stargazers_count: number
+  watchers_count: number
 }
