@@ -13,3 +13,5 @@
 11. Added fetch repositories initially as part of the layout (TODO: Change this to only fetch in list screen)
 12. Added styling for repository card
 13. Display different badges
+14. Extracted useQuery to a hook and move querying logic to ListScreen
+15. Added progress bar

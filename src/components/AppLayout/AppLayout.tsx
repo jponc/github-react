@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { SearchAppBar } from "../SearchAppBar";
 import { useHistory, useLocation } from "react-router";
 import { Container } from "@material-ui/core";
